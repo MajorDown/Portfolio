@@ -1,0 +1,490 @@
+/* 'Source Code Pro', monospace */
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@500&display=swap');
+/* 'Architects Daughter', cursive */
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
+
+@import url(./animaback.css);
+@import url(./animations.css);
+
+:root {
+    --color1: antiquewhite;
+    --color2: rgba(97, 97, 97, 0.355);
+    --color3: rgba(255, 172, 7, 0.857);
+    --font1: 'Source Code Pro', monospace;
+    --font2: 'Architects Daughter', cursive;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    color: var(--color1);
+    font-family: var(--font1);
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-moz-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--color2);
+    border-radius: 10px;
+}
+
+::-moz-scrollbar-thumb {
+    background-color: var(--color2);
+    border-radius: 10px;
+}
+
+svg {
+    fill: var(--color1);
+    width: 24px;
+    height: 24px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 10px 10px 10%;
+}
+
+header div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    color: var(--color1);
+    font-family: var(--font2);
+    font-size: 40px;
+    text-shadow: 13px 7px 9px rgba(0, 0, 0, 0.8);
+}
+
+#title {
+    width: 500px;
+}
+
+#title div {
+    display: flex;
+    flex-direction: row;
+}
+
+#title p {
+    height: 36px;
+    font-size: 30px;
+    color: var(--color3);
+    overflow: hidden;
+    white-space: nowrap;
+    animation: typeEffect 3.5s;
+}
+
+#title span {
+    color: var(--color3);
+    font-size: 30px;
+    display: inline-block;
+    animation: blink 1s infinite;
+}
+
+
+nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 20px;
+}
+
+nav svg {
+    fill: var(--color1);
+    width: 36px;
+    height: 36px;
+    transition: 0.3s;
+}
+
+nav svg:hover {
+    fill: var(--color3);
+    transition: 0.3s;
+}
+
+.active-link svg {
+    width: 48px;
+    height: 48px;
+    transition: 0.3s;
+}
+
+main {
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+.box {
+    background: var(--color2);
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+    font-size: 14px;
+}
+
+#sideBar {
+    min-width: 250px;
+    width: 250px;
+    height: 700px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    animation: entranceByZoom 1s ease 0s 1 normal forwards;
+}
+
+#photo {
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+#informations {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.infos {
+    display: flex;
+    justify-content: space-between;
+}
+
+.infos span {
+    width: 85%;
+}
+
+#interest {
+    width: 100%;
+    margin: 10px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.interest-list {
+    margin: 10px auto;
+    width: 95%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.interest-list svg {
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.interest-list svg:hover {
+    fill: rgba(255, 172, 7, 0.857);
+    transition: 0.3s;
+}
+
+#mainContainer {
+    width: calc(100% - 270px);
+    height: 700px;
+    overflow-y: scroll;
+    animation: entranceByRight 1s ease 0s 1 normal forwards;
+}
+
+#mainContainer svg {
+    width: 24px;
+    height: 24px;
+}
+
+#mainContainer svg:hover {
+    fill: var(--color3);
+}
+
+#mainContainer h2 {
+    margin: 10px;
+}
+
+#mainContainer h3 {
+    margin: 10px 0px;
+}
+
+#mainContainer article {
+    margin: 10px;
+}
+
+#mainContainer p {
+    margin: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+#mainContainer section {
+    overflow: hidden;
+    animation: upToDown 3s;
+}
+
+#technoskills {
+    display: flex;
+}
+
+#stack-technos {
+    min-width: 45%;
+}
+
+#technos-list {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0px;
+}
+
+#technos-list img {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+
+}
+
+.techno-rater {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.techno-rater p {
+    position: relative;
+    white-space: nowrap;
+    top: -30px;
+    font-size: 12px;
+}
+
+.techno-line {
+    height: 6px;
+    background-color: var(--color1);
+    border-radius: 3px;
+}
+
+#divider1 {
+    min-height: 100%;
+    width: 6px;
+    border-radius: 3px;
+    background: var(--color2);
+    margin-right: 20px;
+}
+
+#skills li {
+    list-style: none;
+}
+
+#skills li::before {
+    content: "\2611";
+    margin-right: 5px;
+}
+
+#divider2 {
+    height: 6px;
+    width: 70%;
+    border-radius: 3px;
+    background: var(--color2);
+    margin: 20px auto;
+}
+
+#tools {
+    width: 45%;
+    min-width: 45%;
+
+}
+
+#toolslearnings {
+    display: flex;
+}
+
+#tools-list {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+#tools-list div {
+    display: flex;
+    align-items: center;
+}
+
+#tools-list img {
+    width: 32px;
+    height: 32px;
+}
+
+#divider3 {
+    min-height: 100%;
+    width: 6px;
+    border-radius: 3px;
+    background: var(--color2);
+    margin-top: 10px;
+    margin-right: 20px;
+}
+
+#learnings-list {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+#learnings-list div {
+    display: flex;
+    align-items: center;
+}
+
+#learnings img {
+    width: 32px;
+    height: 32px;
+}
+
+#portfolio-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+#folderTree {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+}
+
+#folderTree p {
+    margin: 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 5px;
+}
+
+.folder:hover,
+.project:hover {
+    cursor: pointer;
+}
+
+.project {
+    padding-left: 10px;
+    animation: upToDown 0.5s;
+}
+
+#portfolio .infos {
+    width: 100%;
+    padding-left: 50px;
+    overflow: hidden;
+}
+
+.content {
+    display: none;
+}
+
+#portfolio-preview {
+    width: 0;
+    aspect-ratio: 1/1;
+    border-radius: 10px;
+    border: solid var(--color1) 3px;
+    visibility: hidden;
+}
+
+#portfolio-preview.active {
+    width: 40%;
+    visibility: visible;
+    transition: width 0.3s;
+}
+
+#portfolio-preview img {
+    width: 100%;
+    height: 80%;
+    object-fit: cover;
+}
+
+#portfolio-preview a {
+    display: none;
+}
+
+#portfolio-preview a.active {
+    display: block;
+}
+
+#contact-container {
+    display: flex;
+    margin: 10px 10px 20px 10px;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+#contact-text {
+    width: 60%;
+}
+
+#contact-links {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+#contact svg {
+    width: 48px;
+    height: 48px;
+    transition: 0.3s;
+}
+
+#mailForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+#name,
+#email,
+#message {
+    background: none;
+    border: solid var(--color1) 3px;
+    border-radius: 10px;
+    width: 50%;
+    text-align: center;
+    line-height: 20px;
+}
+
+#message {
+    height: 200px;
+}
+
+#submit {
+    width: 50%;
+    border-radius: 10px;
+    height: 30px;
+    color: rgb(1, 57, 88);
+    font-weight: 900;
+    transition: 0.3s;
+}
+
+#submit:hover {
+    cursor: pointer;
+    background: var(--color3);
+    transition: 0.3s;
+}
+
+#mailConfirmation {
+    display: none !important;
+    width: fit-content;
+    margin: 0px auto;
+}
+
+#mailConfirmation.active {
+    display: block !important;
+}

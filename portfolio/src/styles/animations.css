@@ -1,0 +1,175 @@
+@keyframes entranceByRight {
+	0% {
+		opacity: 0;
+		transform: translateX(250px);
+	}
+
+	60% {
+		opacity: 1;
+		transform: translateX(-10px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+
+
+@keyframes entranceByZoom {
+	0% {
+		transform: scale(0);
+	}
+
+	100% {
+		transform: scale(1);
+	}
+}
+
+/* animation: entranceByZoom 1s ease 0s 1 normal forwards; */
+
+@keyframes typeEffect {
+	0% {
+		width: 0px;
+	}
+
+	28% {
+		width: 0px;
+	}
+
+	30% {
+		width: 18px;
+	}
+
+	33% {
+		width: 35px;
+	}
+
+	36% {
+		width: 54px;
+	}
+
+	39% {
+		width: 71px;
+	}
+
+	41% {
+		width: 90px;
+	}
+
+	44% {
+		width: 108px;
+	}
+
+	50% {
+		width: 125px;
+	}
+
+	53% {
+		width: 143px;
+	}
+
+	56% {
+		width: 161px;
+	}
+
+	59% {
+		width: 179px;
+	}
+
+	62% {
+		width: 197px;
+	}
+
+	65% {
+		width: 215px;
+	}
+
+	68% {
+		width: 233px;
+	}
+
+	75% {
+		width: 251px;
+	}
+
+	78% {
+		width: 269px;
+	}
+
+	81% {
+		width: 287px;
+	}
+
+	84% {
+		width: 305px;
+	}
+
+	87% {
+		width: 323px;
+	}
+
+	89% {
+		width: 340px;
+	}
+
+	92% {
+		width: 358px;
+	}
+
+	94% {
+		width: 376px;
+	}
+
+	96% {
+		width: 394px;
+	}
+
+	98% {
+		width: 412px;
+	}
+
+	100% {
+		width: 430px;
+	}
+}
+
+@keyframes blink {
+	0% {
+		opacity: 0;
+	}
+
+	50% {
+		opacity: 1;
+	}
+
+	100% {
+		opacity: 0;
+	}
+}
+
+@keyframes upToDown {
+	0% {
+		height: 0;
+	}
+
+	100% {
+		height: 100%;
+	}
+}
+
+
+@keyframes fadeInOut {
+	0% {
+		opacity: 1;
+	}
+
+	50% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
