@@ -14,7 +14,7 @@ const Contact = () => {
 
     const emailData = {
       sender: { name: name, email: email },
-      to: [{ email: "romain.fouillaron@gmx.fr" }],
+      to: [{ email: `${data.ownBar.mail}` }],
       subject: `PortFolio - nouveau message de ${name}`,
       textContent: `Bonjour, nouveau message envoyé à partir du portfolio : \n
       ${message}`,
@@ -56,17 +56,14 @@ const Contact = () => {
           ... vous dites ? Tweeter ? Instagram ? Oui... bientôt peut-être.
         </div>
         <div id="contact-links">
-          <a href="https://github.com/MajorDown" target="_blank">
-            <SvgMaker item="github" />
+          <a href={data.contact.links[0].url} target="_blank">
+            <SvgMaker item={data.contact.links[0].network} />
           </a>
-          <a
-            href="https://www.linkedin.com/in/romain-fouillaron-b36673260/"
-            target="_blank"
-          >
-            <SvgMaker item="linkedin" />
+          <a href={data.contact.links[1].url} target="_blank">
+            <SvgMaker item={data.contact.links[1].network} />
           </a>
-          <a href="https://www.facebook.com/romain.fouillaron/" target="_blank">
-            <SvgMaker item="facebook" />
+          <a href={data.contact.links[2].url} target="_blank">
+            <SvgMaker item={data.contact.links[2].network} />
           </a>
         </div>
       </div>
