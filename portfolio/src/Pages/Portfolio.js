@@ -1,8 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import SvgMaker from "../components/SvgMaker";
 import Project from "../components/Project";
+import { PortfolioContext } from "../App";
 
 const Portfolio = () => {
+  const data = useContext(PortfolioContext);
   const [previewImage, setPreviewImage] = useState([""]);
   const [previewerUrl, setPreviewerUrl] = useState(["#"]);
 
@@ -65,53 +67,23 @@ const Portfolio = () => {
             <span>Projets OpenClassRooms</span>
           </p>
           <div className="content">
-            <Project
-              name="P2 - Booki"
-              description="mission : intégration responsive d'une page en html/css à partir d'une maquette figma"
-              repository="https://github.com/MajorDown/Booki.git"
-              onClick={(e) =>
-                handleProjectClick(
-                  "/images/projectImages/booki.jpg",
-                  "https://majordown.github.io/Booki/"
-                )
-              }
-            />
-            <Project
-              name="P3 - Sophie Bluel"
-              description="mission : rendre dynamique une page web et la faire communiquer avec une API"
-              repository="https://github.com/MajorDown/Sophie-Bluel.git"
-              onClick={(e) =>
-                handleProjectClick("/images/projectImages/no_preview.jpg", "")
-              }
-            />
-            <Project
-              name="P5 - Nina Carducci"
-              description="mission : débug, optimisation du référencement SEO et des performances du site"
-              repository="https://github.com/MajorDown/Nina_Carducci.git"
-              onClick={(e) =>
-                handleProjectClick(
-                  "/images/projectImages/no_preview.jpg",
-                  "https://majordown.github.io/Nina_Carducci/"
-                )
-              }
-            />
-            <Project
-              name="P6 - Kasa"
-              description="mission : création d'une application React capable de communiquer avec une API"
-              repository="https://github.com/MajorDown/Kasa.git"
-              onClick={(e) =>
-                handleProjectClick("/images/projectImages/no_preview.jpg", "")
-              }
-            />
-            <Project
-              name="P7 - Mon Vieux Grimoire"
-              description="mission : coté Backend, création d'une API CRUD sécurisée sous NodeJS"
-              repository="https://github.com/MajorDown/mon_vieux_grimoire.git"
-              onClick={(e) =>
-                handleProjectClick("/images/projectImages/no_preview.jpg", "")
-              }
-            />
+            {data.portfolio.openclassrooms.map((project, index) => (
+              <Project
+                key={index}
+                name={project.name}
+                description={project.description}
+                repository={project.repository}
+                onClick={(e) =>
+                  handleProjectClick(project.preview, project.site)
+                }
+              />
+            ))}
           </div>
+          <p className="folder" onClick={handleClick}>
+            <SvgMaker item="folder" />
+            <span>Projets Perso'</span>
+          </p>
+          <div className="content"></div>
         </article>
         <article id="portfolio-preview">
           <img src={previewImage[previewImage.length - 1]} alt="preview" />
