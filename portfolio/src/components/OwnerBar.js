@@ -1,5 +1,4 @@
 import React, { useState, useContext } from "react";
-import photo from "../images/photo.jpg";
 import { calculAge } from "../utils/utils";
 import SvgMaker from "./SvgMaker";
 import { PortfolioContext } from "../App";
@@ -28,7 +27,7 @@ const OwnerBar = () => {
   return (
     <section id="sideBar" className="box">
       <div id="photo">
-        <img src={photo} alt="profil" />
+        <img src={data.ownBar.photo} alt="profil" />
       </div>
       <div id="informations">
         <p className="infos birthday">
