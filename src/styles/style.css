@@ -22,10 +22,12 @@
 }
 
 ::-webkit-scrollbar {
+    background-color: rgb(0, 70, 71);
     width: 12px;
 }
 
 ::-moz-scrollbar {
+    background-color: rgb(0, 70, 71);
     width: 12px;
 }
 
@@ -44,6 +46,12 @@ svg {
     width: 24px;
     height: 24px;
 }
+
+body {
+    overflow-y: auto;
+}
+
+/**********HEADER********************/
 
 header {
     display: flex;
@@ -79,7 +87,7 @@ h1 {
     color: var(--color3);
     overflow: hidden;
     white-space: nowrap;
-    animation: typeEffect 3.5s;
+    animation: typeEffect 3.5s linear;
 }
 
 #title span {
@@ -115,6 +123,8 @@ nav svg:hover {
     transition: 0.3s;
 }
 
+/**********MAIN********************/
+
 main {
     display: flex;
     justify-content: flex-start;
@@ -129,6 +139,8 @@ main {
     font-size: 14px;
 }
 
+/**********SIDEBAR********************/
+
 #sideBar {
     min-width: 250px;
     width: 250px;
@@ -141,10 +153,15 @@ main {
 }
 
 #photo {
-    width: 200px;
-    height: 200px;
+    width: 80%;
+    aspect-ratio: 1/1;
     overflow: hidden;
     border-radius: 50%;
+}
+
+#photo img {
+    width: 100%;
+    height: 100%;
 }
 
 #informations {
@@ -188,6 +205,18 @@ main {
     transition: 0.3s;
 }
 
+/**********MAIN CONTAINER********************/
+
+#mainContainer::-webkit-scrollbar {
+    background-color: rgba(0, 70, 71, 0);
+    width: 12px;
+}
+
+#mainContainer::-moz-scrollbar {
+    background-color: rgba(0, 70, 71, 0);
+    width: 12px;
+}
+
 #mainContainer {
     width: calc(100% - 270px);
     height: 700px;
@@ -227,6 +256,8 @@ main {
     overflow: hidden;
     animation: upToDown 3s;
 }
+
+/**********STACK********************/
 
 #technoskills {
     display: flex;
@@ -349,10 +380,22 @@ main {
     height: 32px;
 }
 
+/**********PORTFOLIO********************/
+
 #portfolio-container {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+}
+
+#folderTree::-webkit-scrollbar {
+    background-color: rgba(0, 70, 71, 0);
+    width: 12px;
+}
+
+#folderTree::-moz-scrollbar {
+    background-color: rgba(0, 70, 71, 0);
+    width: 12px;
 }
 
 #folderTree {
@@ -384,7 +427,10 @@ main {
 #portfolio .infos {
     width: 100%;
     padding-left: 50px;
-    overflow: hidden;
+}
+
+#portfolio .infos span {
+    width: 70%;
 }
 
 .content {
@@ -421,6 +467,8 @@ main {
 #portfolio-preview a.active {
     display: block;
 }
+
+/**********CONTACT********************/
 
 #contact-container {
     display: flex;
@@ -490,4 +538,241 @@ main {
 
 #mailConfirmation.active {
     display: block !important;
+}
+
+/**********FOOTER********************/
+
+footer {
+    padding: 10px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+/**********BREAKPOINTS*******************/
+
+@media only screen and (max-width : 1024px) {
+    main {
+        gap: 0px;
+    }
+
+    .box {
+        font-size: 10px;
+        line-height: 12px;
+    }
+
+    #sideBar {
+        min-width: 150px;
+    }
+
+    #mainContainer {
+        width: calc(100% - 170px);
+    }
+
+
+    #technoskills {
+        flex-direction: column;
+    }
+
+    #divider1 {
+        min-height: 6px;
+        width: 70%;
+        border-radius: 3px;
+        background: var(--color2);
+        margin: 20px auto;
+    }
+
+    #portfolio-container {
+        flex-direction: column;
+        position: relative;
+        min-height: 650px;
+        width: 100%;
+    }
+
+    #folderTree {
+        max-width: 98%;
+        max-height: 320px;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    #portfolio-preview.active {
+        position: absolute;
+        top: 350px;
+        left: 50%;
+        transform: translateX(-50%);
+
+    }
+
+    #portfolio .infos span {
+        width: 70%;
+        white-space: pre-wrap;
+    }
+
+    footer {
+        font-size: 10px;
+    }
+}
+
+@media only screen and (max-width : 768px) {
+    svg {
+        width: 1.4vw;
+        height: 1.4vw;
+    }
+
+    h1 {
+        font-size: 25px;
+        text-shadow: 7px 3px 4px rgba(0, 0, 0, 0.8);
+    }
+
+    #title p {
+        height: 18px;
+        font-size: 15px;
+        white-space: nowrap;
+    }
+
+    #title span {
+        font-size: 15px;
+    }
+
+    nav svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    #sideBar {
+        min-width: 100px;
+        width: 25%;
+        font-size: 1.2vw;
+    }
+
+    #mainContainer {
+        width: 70%;
+        font-size: 1.3vw;
+    }
+
+    #mainContainer svg {
+        width: 16px;
+        height: 16px;
+    }
+
+    #contact-text {
+        width: 80%;
+    }
+
+    #contact-links {
+        justify-content: flex-start;
+        flex-direction: column;
+    }
+
+    #contact-links svg {
+        width: 24px;
+        height: 24px;
+    }
+
+    #portfolio-preview.active {
+        width: 75%;
+    }
+
+    #name,
+    #email,
+    #message,
+    #submit {
+        width: 75%;
+    }
+
+    #message {
+        height: 250px;
+    }
+}
+
+@media only screen and (max-width : 500px) {
+    header {
+        margin: 10px;
+    }
+
+    h1 {
+        font-size: 18px;
+    }
+
+    #title p {
+        height: 18px;
+        font-size: 10px;
+        line-height: 12px;
+    }
+
+    #title span {
+        font-size: 10px;
+    }
+
+    .active-link svg {
+        width: 24px;
+        height: 24px;
+    }
+
+    main {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #sideBar {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: center;
+        align-content: space-evenly;
+        gap: 10px;
+        margin: 0px auto;
+        width: 95%;
+        height: 200px;
+        font-size: 8px;
+        padding: 0px;
+    }
+
+    #sideBar svg {
+        width: 10px;
+        height: 10px;
+    }
+
+    #photo {
+        width: 30vw;
+    }
+
+    #informations {
+        max-width: 180px;
+    }
+
+    #informations p {
+        line-height: 10px;
+        justify-content: flex-start;
+        gap: 10px;
+    }
+
+    #interest {
+        max-width: 180px;
+        height: 50px;
+        margin: 0px;
+    }
+
+    #mainContainer {
+        margin: 0px auto;
+        width: 95%;
+        padding: 0px;
+        font-size: 8px;
+    }
+
+    #mainContainer>* {
+        margin: 5px;
+    }
+
+    #portfolio-preview.active {
+        margin: 0px;
+        width: 90%;
+    }
+
+    #name,
+    #email,
+    #message,
+    #submit {
+        width: 90%;
+    }
 }
