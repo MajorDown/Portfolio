@@ -1,12 +1,25 @@
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --colorBack: #1E1E1E;
+  --colorFont1: #83bce6;
+  --colorFont2: #e7e7e7;
+  --colorShadow: #003E6B1A;
+  --colorButton: rgb(137, 82, 0);
+  --colorBtnHover: rgb(198, 119, 0);
+  --colorIcon: rgb(0, 96, 102);
+  --boxShadow: 10px 10px 20px 0px rgba(151, 91, 0, 0.331);
+  --sizeTitle: 40px;
+  --sizeSubTitle: 30px;
+  --sizeText: 20px;
+  --sizeMobileText: 2.3vw;
+  --radius: 5px;
 }
 
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  font-family: var(--font-normal);
+  color: var(--colorFont1);
 }
 
 html,
@@ -20,7 +33,30 @@ body {
   align-items: center;
 }
 
-a {
+a,
+span {
   color: inherit;
   text-decoration: none;
+}
+
+::-webkit-scrollbar {
+  width: 1.6vw;
+  max-width: 16px;
+  background-color: var(--colorBack);
+}
+
+::-moz-scrollbar {
+  width: 1.6vw;
+  max-width: 16px;
+  background-color: var(--colorBack);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--colorFont);
+  border-radius: 0.8vw;
+}
+
+::-moz-scrollbar-thumb {
+  background-color: var(--colorFont);
+  border-radius: 0.8vw;
 }

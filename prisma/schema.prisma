@@ -141,7 +141,7 @@ enum RequestMethod {
 
 model Visit {
   id        Int           @id @default(autoincrement())
-  IP        String
+  ip        String
   visitedAt DateTime      @default(now())
   path      String
   method    RequestMethod

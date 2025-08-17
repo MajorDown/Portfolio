@@ -1,20 +1,21 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Overpass_Mono, Montserrat } from "next/font/google";
 import "./globals.css";
+import Header from "@/components/sections/Header";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const montserrat = Montserrat({
+  variable: "--font-normal",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const overpassMono = Overpass_Mono({
+  variable: "--font-title",
   subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
   title: "Romain Fouillaron ~ Développeur Web",
-  description: "Mon portfolio de développeur web",
+  description: "Romain Fouillaron propose de développer de a à z vos projets d'application ou de sites web",
 };
 
 export default function RootLayout({
@@ -24,7 +25,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body className={`${montserrat.variable} ${overpassMono.variable}`}>
+        <Header />
         {children}
       </body>
     </html>
