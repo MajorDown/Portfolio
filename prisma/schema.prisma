@@ -1,0 +1,148 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../app/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model AdminPassword {
+  id             Int      @id @default(1)
+  hashedPassword String
+  updatedAt      DateTime @updatedAt
+}
+
+enum TechCategory {
+  LANGUAGE
+  FRAMEWORK
+  TOOL
+}
+
+model Technology {
+  id               Int          @id @default(autoincrement())
+  name             String       @unique
+  category         TechCategory
+  icon             Bytes
+  usedInProject    Project[]    @relation("ProjectTechnologies")
+  usedInExperience Experience[] @relation("ExperienceTechnologies")
+  usedInEducation  Education[]  @relation("EducationTechnologies")
+  spotlightInCv    Cv[]         @relation("CvSpotlightTechnologies")
+  usedInCv         Cv[]         @relation("CvTechnologies")
+}
+
+enum SkillType {
+  HARD
+  SOFT
+}
+
+model Skill {
+  id            Int       @id @default(autoincrement())
+  label         String    @unique
+  type          SkillType
+  usedInCv      Cv[]      @relation("CvSkills")
+  spotlightInCv Cv[]      @relation("CvSpotlightSkills")
+}
+
+enum ProjectType {
+  PERSONAL
+  WORK
+  OPEN_SOURCE
+}
+
+enum ScreenSize {
+  MOBILE
+  DESKTOP
+}
+
+enum ScreenMime {
+  PNG
+  JPG
+  JPEG
+  WEBP
+}
+
+model Project {
+  id          Int          @id @default(autoincrement())
+  title       String       @unique
+  type        ProjectType
+  role        String
+  summary     String?
+  start       DateTime?
+  end         DateTime?
+  repoUrl     String?
+  siteUrl     String?
+  screen1Data Bytes?
+  screen1Size ScreenSize?
+  screen1Mime ScreenMime?
+  screen2Data Bytes?
+  screen2Size ScreenSize?
+  screen2Mime ScreenMime?
+  technos     Technology[] @relation("ProjectTechnologies")
+}
+
+model Experience {
+  id          Int          @id @default(autoincrement())
+  title       String
+  role        String
+  company     String
+  start       DateTime
+  end         DateTime?
+  description String
+  location    String
+  usedTechnos Technology[] @relation("ExperienceTechnologies")
+}
+
+model Education {
+  id             Int          @id @default(autoincrement())
+  degree         String
+  description    String?
+  learnedTechnos Technology[] @relation("EducationTechnologies")
+  school         String
+  start          DateTime
+  end            DateTime?
+  location       String
+}
+
+model Hobby {
+  id    Int    @id @default(autoincrement())
+  label String @unique
+  icon  Bytes
+}
+
+model Cv {
+  id              Int          @id @default(autoincrement())
+  title           String       @unique
+  summary         String
+  isActif         Boolean      @default(true)
+  techsList       Technology[] @relation("CvTechnologies")
+  skillsList      Skill[]      @relation("CvSkills")
+  spotlightTechs  Technology[] @relation("CvSpotlightTechnologies")
+  spotlightSkills Skill[]      @relation("CvSpotlightSkills")
+  createdAt       DateTime     @default(now())
+  updatedAt       DateTime     @updatedAt
+}
+
+enum RequestMethod {
+  GET
+  POST
+  PUT
+  DELETE
+  PATCH
+  OPTIONS
+}
+
+model Visit {
+  id        Int           @id @default(autoincrement())
+  IP        String
+  visitedAt DateTime      @default(now())
+  path      String
+  method    RequestMethod
+}
