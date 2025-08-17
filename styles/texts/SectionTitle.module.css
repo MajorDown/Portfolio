@@ -1,0 +1,31 @@
+.titleOnLeft {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background: linear-gradient(to right, var(--colorBg0), transparent);
+    width: 100%;
+}
+
+.titleOnRight {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background: linear-gradient(to left, var(--colorBg0), transparent);
+    width: 100%;
+}
+
+.titleOnLeft h2,
+.titleOnRight h2 {
+    font-family: var(--font-title);
+    font-size: var(--sizeSubTitle);
+    width: 100%;
+    padding: 5px;
+}
+
+.titleOnLeft h2 {
+    text-align: left;
+}
+
+.titleOnRight h2 {
+    text-align: right;
+}

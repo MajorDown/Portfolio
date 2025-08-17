@@ -1,9 +1,9 @@
 :root {
   --colorBg0: #505050;
-  --colorBg1: #320000;
-  --colorBg2: #1a1700;
-  --colorBg3: #011f00;
-  --colorBg4: #02001f;
+  --colorBg1: #161111;
+  --colorBg2: #171711;
+  --colorBg3: #151b14;
+  --colorBg4: #111117;
   --colorFont1: #83bce6;
   --colorFont2: #e7e7e7;
   --colorShadow: #003E6B1A;
@@ -55,6 +55,10 @@ span {
   font-family: inherit;
 }
 
+p {
+  font-size: var(--sizeText);
+}
+
 ::-webkit-scrollbar {
   width: 1.6vw;
   max-width: 16px;
@@ -75,4 +79,12 @@ span {
 ::-moz-scrollbar-thumb {
   background-color: var(--colorFont);
   border-radius: 0.8vw;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
 }

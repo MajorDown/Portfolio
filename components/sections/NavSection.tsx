@@ -2,6 +2,10 @@ import { ReactNode } from "react"
 import Link from "next/link"
 import Styles from '@/styles/sections/NavSection.module.css'
 
+/**
+ * @description Section de navigation du site
+ * @returns {ReactNode}
+ */
 const NavSection = (): ReactNode => {
     return (<nav id={Styles.navSection}>
         <ul>
