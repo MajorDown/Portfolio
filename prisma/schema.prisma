@@ -58,7 +58,8 @@ enum ProjectType {
 }
 
 enum ScreenSize {
-  MOBILE
+  MOBILEX
+  MOBILEY
   DESKTOP
 }
 

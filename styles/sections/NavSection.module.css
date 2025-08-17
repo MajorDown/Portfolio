@@ -1,0 +1,43 @@
+#navSection {
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+#navSection ul {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    padding: 50px 0;
+}
+
+#navSection li {
+    list-style: none;
+    width: 65vw;
+    height: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.onLeft {
+    background: linear-gradient(to right, transparent, var(--colorFont1));
+    justify-content: flex-end;
+    transform: translateX(-35%);
+}
+
+.onRight {
+    background: linear-gradient(to right, var(--colorFont1), transparent);
+    justify-content: flex-start;
+    transform: translateX(35%);
+}
+
+#navSection li a {
+    padding-bottom: 30px;
+    padding-left: 5px;
+    padding-right: 5px;
+}

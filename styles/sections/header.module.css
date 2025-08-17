@@ -8,6 +8,7 @@
 .header h1 {
     font-family: var(--font-title);
     font-size: var(--sizeTitle);
+    font-weight: 700;
     padding-top: 100px;
     padding-bottom: 20px;
     z-index: 1;
@@ -23,7 +24,6 @@
 
 .header img {
     position: absolute;
-    width: 200px;
     top: 20px;
     left: 50%;
     transform: translateX(-50%);

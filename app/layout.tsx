@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Overpass_Mono, Montserrat } from "next/font/google";
-import "./globals.css";
+import { Overpass_Mono, Montserrat } from "next/font/google";
+import "@/styles/globals.css";
+import "@/styles/animations.css";
 import Header from "@/components/sections/Header";
 
 const montserrat = Montserrat({
@@ -27,7 +28,9 @@ export default function RootLayout({
     <html lang="fr">
       <body className={`${montserrat.variable} ${overpassMono.variable}`}>
         <Header />
-        {children}
+        <main>
+          {children}
+        </main>
       </body>
     </html>
   );

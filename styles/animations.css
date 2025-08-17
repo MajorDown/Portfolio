@@ -1,0 +1,80 @@
+@keyframes OpeningBackground {
+    0% {
+        background-color: var(--colorBg0);
+    }
+
+    100% {
+        background-color: var(--colorBg1);
+    }
+}
+
+@keyframes BackgroundCycle {
+
+    0% {
+        background-color: var(--colorBg1);
+    }
+
+    25% {
+        background-color: var(--colorBg2);
+    }
+
+    50% {
+        background-color: var(--colorBg3);
+    }
+
+    75% {
+        background-color: var(--colorBg4);
+    }
+
+    100% {
+        background-color: var(--colorBg1);
+    }
+}
+
+@keyframes TechnoAwake {
+    0% {
+        transform: rotate();
+    }
+
+    25% {
+        transform: rotate(-5deg);
+    }
+
+    50% {
+        transform: rotate(10deg);
+    }
+
+    75% {
+        transform: rotate(-10deg);
+    }
+
+    100% {
+        transform: rotate(5deg);
+    }
+}
+
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+
+    49% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    99% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.blinkingUnderscore {
+    animation: blink 1s infinite;
+}
